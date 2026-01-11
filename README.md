@@ -58,3 +58,9 @@ npm run dev
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 💡 Inspiration
+
+- [Original WordPress Blocks](https://github.com/ehsanpo/Blocks) - My previous work with WordPress blocks.
+
+- [Web-site Downkingo](https://github.com/down-kingo/web-site-downkingo) - Inspiration for several components.
