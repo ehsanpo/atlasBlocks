@@ -136,7 +136,7 @@ export function HomePagePreview({ onBack, onDocsClick }: { onBack?: () => void, 
             tag="Architecture"
             headline="Premium <span class='text-primary'>Shadcn</span> & React components."
             features={shadcnFeatures}
-            image="/logo-text.png"
+            image="/atlasBlocks/logo-text.png"
             appTitle="shadcn-v2.0"
           />
         </div>
