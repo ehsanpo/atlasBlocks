@@ -70,7 +70,7 @@ export function Testimonials({
               </h2>
             )}
             {description && (
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="font-mono text-lg text-muted-foreground leading-relaxed">
                 {description}
               </p>
             )}

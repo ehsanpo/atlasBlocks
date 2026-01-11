@@ -106,7 +106,7 @@ export function Links({
                 
                 {item.bodyText && (
                   <div 
-                    className="mb-8 text-muted-foreground prose prose-sm max-w-none dark:prose-invert leading-relaxed"
+                    className="font-mono mb-8 text-muted-foreground prose prose-sm max-w-none dark:prose-invert leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: item.bodyText }}
                   />
                 )}

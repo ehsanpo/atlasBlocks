@@ -6,6 +6,7 @@ import { BannerPreview } from './components/previews/BannerPreview'
 import { CTAPreview } from './components/previews/CTAPreview'
 import { FAQPreview } from './components/previews/FAQPreview'
 import { TextImagePreview } from './components/previews/TextImagePreview'
+import { FeatureBlockPreview } from './components/previews/FeatureBlockPreview'
 import { TestimonialsPreview } from './components/previews/TestimonialsPreview'
 import { LinksPreview } from './components/previews/LinksPreview'
 import { HeroSliderPreview } from './components/previews/HeroSliderPreview'
@@ -17,8 +18,12 @@ import { HeaderPreview } from './components/previews/HeaderPreview'
 import { GalleryPreview } from './components/previews/GalleryPreview'
 import { StatisticPreview } from './components/previews/StatisticPreview'
 import { TeamPreview } from './components/previews/TeamPreview'
+import { HeroPremiumPreview } from './components/previews/HeroPremiumPreview'
+import { HeaderMinimalPreview } from './components/previews/HeaderMinimalPreview'
 import { LandingPagePreview } from './components/previews/LandingPagePreview'
-import { Sun, Moon, ChevronDown } from 'lucide-react'
+import { HomePagePreview } from './components/previews/HomePagePreview'
+import { Sun, Moon, ChevronDown, Menu } from 'lucide-react'
+import { cn } from './lib/utils'
 
 const PRIMARY_COLORS = {
   blue: {
@@ -49,17 +54,21 @@ const components: ComponentItem[] = [
   { id: 'faq', name: 'FAQ Block' },
   { id: 'filter-post', name: 'Filter Posts Block' },
   { id: 'hero-slider', name: 'Hero Slider Block' },
+  { id: 'hero-premium', name: 'Premium Hero Block' },
   { id: 'links', name: 'Links Block' },
   { id: 'testimonials', name: 'Testimonials Block' },
   { id: 'text-image', name: 'Text + Image Block' },
+  { id: 'product-feature', name: 'Product Feature Block' },
   { id: 'feature', name: 'Feature Block' },
   { id: 'gallery', name: 'Gallery Block' },
   { id: 'statistic', name: 'Statistic Block' },
   { id: 'team', name: 'Our Team Block' },
   { id: 'contact', name: 'Contact Form' },
+  { id: 'header-minimal', name: 'Minimal Header' },
   { id: 'header', name: 'Header' },
   { id: 'footer', name: 'Footer' },
   { id: 'landing-page', name: 'Example Landing Page' },
+  { id: 'home-page', name: 'Home Page' },
 ]
 
 function App() {
@@ -70,8 +79,9 @@ function App() {
     return 'dark'
   })
 
-  const [activeComponent, setActiveComponent] = useState('article-list')
+  const [activeComponent, setActiveComponent] = useState('home-page')
   const [primaryColor, setPrimaryColor] = useState<PrimaryColor>('yellow')
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
 
   useEffect(() => {
     const root = window.document.documentElement
@@ -94,6 +104,19 @@ function App() {
   // Render the active component preview
   const renderPreview = () => {
     switch (activeComponent) {
+      case 'home-page':
+        return (
+          <HomePagePreview 
+            onBack={() => {
+              setIsSidebarCollapsed(false)
+              setActiveComponent('article-list')
+            }} 
+            onDocsClick={() => {
+              setIsSidebarCollapsed(false)
+              setActiveComponent('article-list')
+            }} 
+          />
+        )
       case 'landing-page':
         return <LandingPagePreview onBack={() => setActiveComponent('article-list')} />
 
@@ -124,6 +147,9 @@ function App() {
       case 'text-image':
         return <TextImagePreview />
       
+      case 'product-feature':
+        return <FeatureBlockPreview />
+      
       case 'contact':
         return <ContactFormPreview />
       
@@ -136,6 +162,9 @@ function App() {
       case 'header':
         return <HeaderPreview />
       
+      case 'header-minimal':
+        return <HeaderMinimalPreview />
+      
       case 'gallery':
         return <GalleryPreview />
       
@@ -144,6 +173,9 @@ function App() {
       
       case 'team':
         return <TeamPreview />
+      
+      case 'hero-premium':
+        return <HeroPremiumPreview />
       
       default:
         return <ArticleListPreview />
@@ -161,41 +193,54 @@ function App() {
         onSelectComponent={setActiveComponent}
         primaryColor={primaryColor}
         onPrimaryColorChange={setPrimaryColor}
+        isCollapsed={isSidebarCollapsed}
+        setIsCollapsed={setIsSidebarCollapsed}
       />
 
       {/* Main Content */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 flex flex-col">
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="flex h-16 items-center justify-between px-4 md:px-8">
             <div className="flex items-center gap-4">
-              {/* Mobile Sidebar Dropdown */}
-              <div className="md:hidden relative">
-                <select 
-                  value={activeComponent}
-                  onChange={(e) => setActiveComponent(e.target.value)}
-                  className="appearance-none bg-muted border border-border rounded-lg px-4 py-2 pr-10 text-sm font-bold focus:ring-2 focus:ring-primary outline-none transition-all shadow-sm"
-                >
-                  {components.map(c => (
-                    <option key={c.id} value={c.id}>{c.name}</option>
-                  ))}
-                </select>
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
-                  <ChevronDown className="h-4 w-4" />
-                </div>
-              </div>
+              {/* Sidebar toggle for when collapsed */}
+              <button 
+                onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+                className={cn(
+                    "p-2 hover:bg-muted rounded-lg transition-all active:scale-95",
+                    !isSidebarCollapsed && "md:hidden"
+                )}
+              >
+                <Menu className="h-5 w-5" />
+              </button>
 
-              <div className="hidden md:block">
-                <h1 className="text-xl font-bold tracking-tight">{currentComponent?.name}</h1>
-                <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-primary">
-                  Atlas UI Component
-                </p>
+              <div className="flex items-center gap-3">
+                 {/* Mobile Sidebar Dropdown */}
+                 <div className="md:hidden relative">
+                   <select 
+                     value={activeComponent}
+                     onChange={(e) => setActiveComponent(e.target.value)}
+                     className="appearance-none bg-muted border border-border rounded-lg px-4 py-2 pr-10 text-sm font-bold focus:ring-2 focus:ring-primary outline-none transition-all shadow-sm"
+                   >
+                     {components.map(c => (
+                       <option key={c.id} value={c.id}>{c.name}</option>
+                     ))}
+                   </select>
+                   <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+                     <ChevronDown className="h-4 w-4" />
+                   </div>
+                 </div>
+
+                 <div className="hidden md:block">
+                   <h1 className="text-xl font-bold tracking-tight">{currentComponent?.name}</h1>
+                   <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-primary">
+                     Atlas Blocks Component
+                   </p>
+                 </div>
               </div>
             </div>
             
             <div className="flex items-center gap-3">
-
-
               <button
                 onClick={toggleTheme}
                 className="rounded-xl p-2.5 transition-all hover:bg-muted border border-border shadow-sm active:scale-95"

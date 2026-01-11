@@ -56,7 +56,7 @@ export interface FooterProps {
 }
 
 export function Footer({
-  logo = <span className="text-xl font-bold">Atlas UI</span>,
+  logo = <span className="text-xl font-bold">Atlas Blocks</span>,
   description = "Building the future of the web with premium components.",
   sections = [],
   copyright = "...",

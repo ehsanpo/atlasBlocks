@@ -70,7 +70,7 @@ const banners = [
 const testimonials = [
   {
     id: 1,
-    testimonial: "Atlas UI has completely transformed how we build marketing sites. The components are gorgeous and incredibly easy to use.",
+    testimonial: "Atlas Blocks has completely transformed how we build marketing sites. The components are gorgeous and incredibly easy to use.",
     name: "Sarah Johnson",
     role: "Lead Creative at PixelFlow",
     image: "https://i.pravatar.cc/150?u=sarah"
@@ -87,7 +87,7 @@ const testimonials = [
 const faqs = [
   {
     id: 1,
-    question: "Is Atlas UI compatible with Next.js?",
+    question: "Is Atlas Blocks compatible with Next.js?",
     answer: "Yes! All components are built with modern React standards and work perfectly with Next.js App Router and Server Components."
   },
   {
@@ -161,7 +161,7 @@ export function LandingPagePreview({ onBack }: { onBack?: () => void }) {
         
         <div className="py-24">
           <Feature 
-            headline="Why Choose Atlas UI?"
+            headline="Why Choose Atlas Blocks?"
             subheadline="Build faster and better with our comprehensive design system."
             features={features}
             columns={3}
@@ -192,7 +192,7 @@ export function LandingPagePreview({ onBack }: { onBack?: () => void }) {
 
         <CTA 
           headline="Ready to build your next masterpiece?"
-          subheadline="Join thousands of developers using Atlas UI to create stunning web experiences."
+          subheadline="Join thousands of developers using Atlas Blocks to create stunning web experiences."
           links={ctaLinks}
           align="wide"
         />

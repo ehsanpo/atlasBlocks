@@ -64,7 +64,7 @@ const apiProps = [
 
 export function StatisticPreview() {
   const [data, setData] = useState({
-    headline: "The Impact of Atlas UI",
+    headline: "The Impact of Atlas Blocks",
     stats: sampleStats,
     columns: 4 as const,
     align: "default" as const

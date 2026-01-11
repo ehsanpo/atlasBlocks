@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="/logo-text.png" alt="Atlas UI Logo" width="400" />
+  <img src="/public/logo-text.png" alt="Atlas Blocks Logo" width="400" />
 </p>
 
-# Atlas UI - Component Library
+# Atlas Blocks - Component Library
 
-Welcome to **Atlas UI**, a high-performance, accessible, and beautifully designed React component library. Built with **TypeScript**, **Tailwind CSS**, and inspired by the **Shadcn UI** philosophy.
+Welcome to **Atlas 'Content**, a high-performance, accessible, and beautifully designed React component library. Built with **TypeScript**, **Tailwind CSS**, and inspired by the **Shadcn UI** philosophy.
 
 ## ✨ Features
 

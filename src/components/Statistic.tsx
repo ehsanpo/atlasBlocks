@@ -61,7 +61,7 @@ export function Statistic({
                 {stat.label}
               </span>
               {stat.description && (
-                <p className="text-xs text-muted-foreground max-w-[150px] leading-relaxed">
+                <p className="font-mono text-xs text-muted-foreground max-w-[150px] leading-relaxed">
                   {stat.description}
                 </p>
               )}

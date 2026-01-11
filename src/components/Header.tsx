@@ -22,7 +22,7 @@ export function Header({
   logo = (
     <div className="flex items-center gap-3">
       <img src="/logo.png" alt="Atlas Logo" className="h-8 w-8 object-contain" />
-      <span className="text-xl font-bold tracking-tight">Atlas UI</span>
+      <span className="text-xl font-bold tracking-tight">Atlas Blocks</span>
     </div>
   ),
   links = [],

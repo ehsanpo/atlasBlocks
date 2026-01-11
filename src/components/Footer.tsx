@@ -26,12 +26,12 @@ export function Footer({
   logo = (
     <div className="flex items-center gap-2">
       <img src="/logo.png" alt="Atlas Logo" className="h-6 w-6 object-contain" />
-      <span className="text-xl font-bold tracking-tight">Atlas UI</span>
+      <span className="text-xl font-bold tracking-tight">Atlas Blocks</span>
     </div>
   ),
   description = "Building the future of the web with powerful components and state-of-the-art design systems.",
   sections = [],
-  copyright = `© ${new Date().getFullYear()} Atlas UI Inc. All rights reserved.`,
+  copyright = `© ${new Date().getFullYear()} Atlas Blocks Inc. All rights reserved.`,
   align = "default",
   backgroundColor,
   gradientBackground = false,
@@ -42,9 +42,9 @@ export function Footer({
       className={cn(
         "py-16 md:py-24 border-t border-border relative overflow-hidden",
         gradientBackground && "bg-gradient-to-br from-primary/10 via-background to-accent/5",
-        align === "wide" && "max-w-7xl mx-auto px-4",
+        align === "wide" && "max-w-7xl mx-auto px-8",
         align === "full" && "w-full",
-        align === "default" && "max-w-6xl mx-auto px-4",
+        align === "default" && "max-w-6xl mx-auto px-8",
         className
       )}
       style={{ backgroundColor }}
@@ -61,15 +61,9 @@ export function Footer({
         {/* Brand Section */}
         <div className="lg:col-span-4">
           <div className="mb-8">{logo}</div>
-          <p className="max-w-xs text-muted-foreground leading-relaxed mb-8 text-lg">
+          <p className="font-mono max-w-xs text-muted-foreground leading-relaxed mb-8 text-lg">
             {description}
           </p>
-          <div className="flex space-x-5">
-            <a href="#" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"><Twitter className="h-5 w-5" /></a>
-            <a href="#" className="p-2 rounded-full bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-white transition-all duration-300"><Instagram className="h-5 w-5" /></a>
-            <a href="#" className="p-2 rounded-full bg-blue-600/10 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"><Facebook className="h-5 w-5" /></a>
-            <a href="#" className="p-2 rounded-full bg-slate-900/10 text-slate-900 dark:text-white dark:bg-white/10 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"><Github className="h-5 w-5" /></a>
-          </div>
         </div>
 
         {/* Links Sections */}
@@ -96,15 +90,10 @@ export function Footer({
         </div>
       </div>
 
-      <div className="relative z-10 mt-20 pt-10 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="relative z-10 mt-20 pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-sm text-muted-foreground font-medium">
           {copyright}
         </p>
-        <div className="flex items-center gap-8 text-sm text-muted-foreground font-medium">
-          <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-          <a href="#" className="hover:text-primary transition-colors">Cookie Settings</a>
-        </div>
       </div>
     </footer>
   )

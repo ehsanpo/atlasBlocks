@@ -66,7 +66,7 @@ export function Testimonials({
         {(headline || description) && (
           <div className="mx-auto mb-16 max-w-2xl text-center">
             {headline && <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">{headline}</h2>}
-            {description && <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>}
+            {description && <p className="font-mono text-lg text-muted-foreground leading-relaxed">{description}</p>}
           </div>
         )}
         <div className={cn(

@@ -127,11 +127,11 @@ export function FilterPost({
                   <a href={project.link}>{project.title}</a>
                 </h3>
                 {project.excerpt && (
-                  <p className="text-sm text-muted-foreground line-clamp-3 mb-6 leading-relaxed">
+                  <p className="font-mono text-sm text-muted-foreground line-clamp-3 mb-6 leading-relaxed">
                     {project.excerpt}
                   </p>
                 )}
-                <div className="mt-auto pt-4 border-t border-border/50">
+                <div className="mt-auto pt-4 border-t border-border">
                    <a href={project.link} className="text-xs font-bold uppercase tracking-widest text-primary hover:underline underline-offset-4 flex items-center gap-2">
                       Read More
                       <div className="h-0.5 w-4 bg-primary rounded-full transition-all group-hover:w-8" />

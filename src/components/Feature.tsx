@@ -77,7 +77,7 @@ export function Feature({
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 tracking-tight">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
+                <p className="font-mono text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
               </div>
             </div>
           )
