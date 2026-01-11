@@ -53,7 +53,7 @@ export function Sidebar({
             onClick={() => onSelectComponent('home-page')}
             className="flex items-center gap-3 mb-1 hover:opacity-80 transition-opacity"
           >
-            <img src="/logo.png" alt="Atlas Logo" className="h-6 w-6 object-contain" />
+            <img src="/atlasBlocks/logo.png" alt="Atlas Logo" className="h-6 w-6 object-contain" />
             {!isCollapsed && <h2 className="text-lg font-semibold truncate">Atlas Blocks</h2>}
           </button>
           {!isCollapsed && (
