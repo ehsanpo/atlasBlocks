@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils"
-import { Facebook, Twitter, Instagram, Github } from "lucide-react"
 
 export interface FooterLink {
   label: string
