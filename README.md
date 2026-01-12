@@ -22,9 +22,23 @@ Welcome to **Atlas 'Content**, a high-performance, accessible, and beautifully d
 - **FAQ**: Interactive accordion for common questions.
 - **Filter Posts**: Dynamic client-side filtering system.
 - **Hero Slider**: Smooth carousel with auto-play.
+- **Premium Hero**: High-end landing page sections with glassmorphism.
 - **Links**: Versatile grid for icons/images and navigation.
 - **Testimonials**: Clean cards for social proof.
 - **Text + Image**: Side-by-side feature layout.
+- **Gallery**: Beautiful grid and slider layouts for images.
+- **Statistic**: Impactful data visualization cards.
+- **Team**: Profile cards for showcasing your team.
+- **Contact Form**: Modern, production-ready form components.
+- **Minimal Header**: Clean, focused navigation for apps.
+- **Header & Footer**: Comprehensive navigation and site mapping.
+- **Parallax Carousel**: Premium swipeable carousel with deep parallax effects.
+- **Product Feature**: Highlighted feature sections for SaaS and E-commerce.
+- **Feature Block**: Flexible list-based feature layouts.
+- **Home Page**: AI-focused landing page with context-aware sections.
+- **Example Landing Page**: Full-featured demo showcasing multiple library components.
+- **Code Block**: Syntax-highlighted code display with copy-to-clipboard.
+- **API Reference**: Professional property documentation for components.
 
 ## 🚀 Getting Started
 

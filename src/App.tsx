@@ -21,6 +21,7 @@ import { TeamPreview } from './components/previews/TeamPreview'
 import { HeroPremiumPreview } from './components/previews/HeroPremiumPreview'
 import { HeaderMinimalPreview } from './components/previews/HeaderMinimalPreview'
 import { LandingPagePreview } from './components/previews/LandingPagePreview'
+import { ParallaxCarouselPreview } from './components/previews/ParallaxCarouselPreview'
 import { HomePagePreview } from './components/previews/HomePagePreview'
 import { Sun, Moon, ChevronDown, Menu } from 'lucide-react'
 import { cn } from './lib/utils'
@@ -67,6 +68,7 @@ const components: ComponentItem[] = [
   { id: 'header-minimal', name: 'Minimal Header' },
   { id: 'header', name: 'Header' },
   { id: 'footer', name: 'Footer' },
+  { id: 'parallax-carousel', name: 'Parallax Carousel' },
   { id: 'landing-page', name: 'Example Landing Page' },
   { id: 'home-page', name: 'Home Page' },
 ]
@@ -176,6 +178,9 @@ function App() {
       
       case 'hero-premium':
         return <HeroPremiumPreview />
+      
+      case 'parallax-carousel':
+        return <ParallaxCarouselPreview />
       
       default:
         return <ArticleListPreview />
