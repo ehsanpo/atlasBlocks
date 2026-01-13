@@ -2,9 +2,9 @@
   <img src="/public/logo-text.png" alt="Atlas Blocks Logo" width="400" />
 </p>
 
-# Atlas Blocks
+# Atlas Blocks - React Component Library
 
-Production-ready React components for modern web applications. Copy-paste accessible components built with TypeScript, Tailwind CSS, and Radix UI—no package bloat, just code you own.
+Production-ready React components for modern web applications. Copy-paste accessible components built with TypeScript and Tailwind CSS, no package bloat, just code you own.
 
 
 ## Preview
