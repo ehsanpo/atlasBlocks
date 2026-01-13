@@ -2,19 +2,75 @@
   <img src="/public/logo-text.png" alt="Atlas Blocks Logo" width="400" />
 </p>
 
-# Atlas Blocks - Component Library
+# Atlas Blocks
 
-Welcome to **Atlas 'Content**, a high-performance, accessible, and beautifully designed React component library. Built with **TypeScript**, **Tailwind CSS**, and inspired by the **Shadcn UI** philosophy.
+Production-ready React components for modern web applications. Copy-paste accessible components built with TypeScript, Tailwind CSS, and Radix UI—no package bloat, just code you own.
 
-## ✨ Features
 
-- 🎨 **Modern Aesthetics**: Designs with glassmorphism, smooth transitions, and vibrant OKLCH color palettes.
-- ♿ **Accessible**: Built on top of Radix UI primitives for world-class accessibility.
-- 🛠️ **Fully Customizable**: Modular components that you can easily theme and extend.
-- 📱 **Responsive**: Mobile-first design that looks stunning on every screen size.
-- ⚡ **Developer Friendly**: Comprehensive documentation with live previews and copy-paste installation.
+## Preview
+[https://ehsanpo.github.io/atlasBlocks/](https://ehsanpo.github.io/atlasBlocks/)
 
-## 📦 Components
+
+## Why This Exists
+
+Most component libraries force you into their ecosystem. Atlas Blocks gives you the code directly—fork it, modify it, ship it. Built for developers who want full control without reinventing accessible patterns from scratch. Inspired by Shadcn UI's philosophy but focused on complete page sections and blocks, not just primitives.
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ehsanpo/atlasBlocks.git
+cd atlasBlocks
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+cd atlas-ui
+npm install
+```
+
+### Development
+
+Run the documentation site locally:
+
+```bash
+npm run dev
+```
+
+
+## Example Usage
+
+```tsx
+// Import and use any component directly
+import { HeroPremium } from './components/HeroPremium'
+import { ContactForm } from './components/ContactForm'
+import { Testimonials } from './components/Testimonials'
+
+function LandingPage() {
+  return (
+    <>
+      <HeroPremium 
+        title="Ship Faster"
+        description="Production-ready components"
+      />
+      <Testimonials items={testimonialData} />
+      <ContactForm onSubmit={handleSubmit} />
+    </>
+  )
+}
+```
+
+All components are TypeScript-ready with full type safety and come with built-in accessibility patterns.
+
+### Adding Components (Shadcn-style)
+
+```bash
+npx shadcn@latest add https://atlasblocks.dev/components/[component-name]
+```
+
+## Available Components
 
 - **Article List**: Clean grid for blog posts and news.
 - **Banner**: High-impact visual sections with overlays.
@@ -40,41 +96,40 @@ Welcome to **Atlas 'Content**, a high-performance, accessible, and beautifully d
 - **Code Block**: Syntax-highlighted code display with copy-to-clipboard.
 - **API Reference**: Professional property documentation for components.
 
-## 🚀 Getting Started
 
-### Installation
+## Tech Stack
 
-Clone the repository and install dependencies:
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS with OKLCH colors
+- **Icons**: Lucide React
+- **Code Highlighting**: Prism React Renderer
+- **Build Tool**: Vite
 
-```bash
-git clone https://github.com/your-repo/atlas-ui.git
-cd atlas-ui
-npm install
-```
+## Inspiration
 
-### Development
+- [Shadcn UI](https://ui.shadcn.com/) – Component philosophy and ownership model
+- [WordPress Blocks](https://github.com/ehsanpo/Blocks) – Content block patterns
+- [Downkingo](https://github.com/down-kingo/web-site-downkingo) – Design inspiration
 
-Run the documentation site locally:
 
-```bash
-npm run dev
-```
+## Contributing
 
-## 🛠️ Tech Stack
+Issues and pull requests are welcome! Found a bug or want to add a component? Open an issue or submit a PR.
 
-- **Framework**: [React](https://reactjs.org/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Components**: [Radix UI](https://www.radix-ui.com/)
-- **Animations**: [Tailwind Animate](https://github.com/jamiebuilds/tailwind-animate)
+## License
 
-## 📄 License
+MIT License – see [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Screenshots
 
-## 💡 Inspiration
+<p align="center">
+  <img src="/demo/demo3.png" alt="Atlas Blocks Component Examples" width="800" />
+</p>
 
-- [Original WordPress Blocks](https://github.com/ehsanpo/Blocks) - My previous work with WordPress blocks.
+<p align="center">
+  <img src="/demo/demo4.png" alt="Atlas Blocks UI Components" width="800" />
+</p>
 
-- [Web-site Downkingo](https://github.com/down-kingo/web-site-downkingo) - Inspiration for several components.
+---
+
+Built with ❤️ for developers who value control and accessibility.
