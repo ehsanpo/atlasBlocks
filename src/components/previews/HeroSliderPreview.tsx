@@ -38,7 +38,6 @@ export interface SlideItem {
 export interface HeroSliderProps {
   slides: SlideItem[]
   autoPlayInterval?: number
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
 }
@@ -46,7 +45,6 @@ export interface HeroSliderProps {
 export function HeroSlider({
   slides = [],
   autoPlayInterval = 5000,
-  backgroundColor,
   align = "full",
   className,
 }: HeroSliderProps) {
@@ -89,7 +87,7 @@ export function HeroSlider({
       align === "full" && "w-full",
       align === "default" && "max-w-6xl mx-auto rounded-3xl",
       className
-    )} style={{ backgroundColor }}>
+    )}>
       <div className="relative h-[400px] md:h-[500px] lg:h-[700px] w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div key={slide.id} className={cn(

@@ -10,35 +10,10 @@ export interface TestimonialItem {
 }
 
 export interface TestimonialsProps {
-  /**
-   * Section headline
-   */
   headline?: string
-  
-  /**
-   * Section description
-   */
   description?: string
-  
-  /**
-   * List of testimonials
-   */
   testimonials: TestimonialItem[]
-  
-  /**
-   * Section background color
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the component
-   * @default "default"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
 }
 
@@ -46,7 +21,6 @@ export function Testimonials({
   headline,
   description,
   testimonials = [],
-  backgroundColor,
   align = "default",
   className,
 }: TestimonialsProps) {
@@ -59,7 +33,6 @@ export function Testimonials({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="container mx-auto text-center">
         {(headline || description) && (

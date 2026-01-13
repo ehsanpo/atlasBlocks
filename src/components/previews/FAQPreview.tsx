@@ -37,7 +37,6 @@ export interface FAQItem {
 
 export interface FAQProps {
   questions: FAQItem[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
   allowMultiple?: boolean
@@ -45,7 +44,6 @@ export interface FAQProps {
 
 export function FAQ({
   questions = [],
-  backgroundColor,
   align = "default",
   className,
   allowMultiple = false,
@@ -74,7 +72,6 @@ export function FAQ({
         align === "default" && "max-w-4xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="divide-y divide-border rounded-xl border border-border bg-card shadow-sm overflow-hidden">
         {questions.map((item) => {
@@ -134,8 +131,8 @@ export default function FAQPage() {
 const apiProps = [
   { name: "questions", type: "FAQItem[]", description: "Array of question and answer objects." },
   { name: "allowMultiple", type: "boolean", defaultValue: "false", description: "Whether multiple items can be expanded simultaneously." },
-  { name: "backgroundColor", type: "string", description: "Background color for the section." },
   { name: "align", type: "'default' | 'wide' | 'full'", defaultValue: "'default'", description: "Width and alignment of the FAQ container." },
+  { name: "className", type: "string", description: "Additional CSS classes." },
 ]
 
 export function FAQPreview() {

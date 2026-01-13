@@ -49,7 +49,6 @@ export interface Article {
 export interface ArticleListProps {
   articles: Article[]
   newsToShow?: 2 | 3 | 4 | -1
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
   readMoreText?: string
@@ -59,7 +58,6 @@ export interface ArticleListProps {
 export function ArticleList({
   articles = [],
   newsToShow = 3,
-  backgroundColor,
   align = "default",
   className,
   readMoreText = "Read more",
@@ -84,7 +82,6 @@ export function ArticleList({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <ul
         className={cn(
@@ -163,7 +160,6 @@ export default function Page() {
 const apiProps = [
   { name: "articles", type: "Article[]", description: "Array of article objects to display." },
   { name: "newsToShow", type: "2 | 3 | 4 | -1", defaultValue: "3", description: "Number of articles to show. -1 shows all." },
-  { name: "backgroundColor", type: "string", description: "Background color for the entire section." },
   { name: "align", type: "'default' | 'wide' | 'full'", defaultValue: "'default'", description: "Horizontal alignment and width of the container." },
   { name: "readMoreText", type: "string", defaultValue: "'Read more'", description: "Text for the action button." },
   { name: "excerptLength", type: "number", defaultValue: "30", description: "Maximum word count for excerpts." },

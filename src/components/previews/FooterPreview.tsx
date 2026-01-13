@@ -51,7 +51,6 @@ export interface FooterProps {
   sections: FooterSection[]
   copyright?: string
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -61,7 +60,6 @@ export function Footer({
   sections = [],
   copyright = "...",
   align = "default",
-  backgroundColor,
   className,
 }: FooterProps) {
   // Implementation...

@@ -24,7 +24,6 @@ export interface StatisticProps {
   stats: StatItem[]
   columns?: 2 | 3 | 4
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -33,7 +32,6 @@ export function Statistic({
   stats = [],
   columns = 4,
   align = "default",
-  backgroundColor,
   className,
 }: StatisticProps) {
   // Implementation...

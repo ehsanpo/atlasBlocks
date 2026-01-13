@@ -47,14 +47,12 @@ export interface LinkItem {
 
 export interface LinksProps {
   links: LinkItem[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
 }
 
 export function Links({
   links = [],
-  backgroundColor,
   align = "default",
   className,
 }: LinksProps) {
@@ -65,7 +63,7 @@ export function Links({
       align === "full" && "w-full",
       align === "default" && "max-w-6xl mx-auto px-4",
       className
-    )} style={{ backgroundColor }}>
+    )}>
       <div className="container mx-auto">
         <div className={cn(
           "grid gap-12 md:gap-8 lg:gap-12 grid-cols-1",
@@ -113,7 +111,6 @@ export default function Footer() {
 const apiProps = [
   { name: "links", type: "LinkItem[]", description: "Array of items to display. Supports icons or images." },
   { name: "align", type: "'default' | 'wide' | 'full'", defaultValue: "'default'", description: "Width and alignment of the container." },
-  { name: "backgroundColor", type: "string", description: "Background color for the section." },
 ]
 
 export function LinksPreview() {

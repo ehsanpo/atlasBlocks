@@ -11,7 +11,6 @@ export interface HeroPremiumProps {
   secondaryButtonText?: string
   secondaryButtonLink?: string
   onSecondaryClick?: () => void
-  backgroundColor?: string
   className?: string
 }
 
@@ -25,13 +24,11 @@ export function HeroPremium({
   secondaryButtonText = "Documentation",
   secondaryButtonLink = "#",
   onSecondaryClick,
-  backgroundColor,
   className,
 }: HeroPremiumProps) {
   return (
     <section 
       className={cn("w-full relative min-h-[90vh] flex flex-col items-center justify-center pt-24 px-6 overflow-hidden bg-background", className)}
-      style={{ backgroundColor }}
     >
         {/* Background Elements */}
         <div 

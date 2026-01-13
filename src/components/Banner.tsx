@@ -10,7 +10,6 @@ export interface BannerItem {
 export interface BannerProps {
   title?: string
   banners: BannerItem[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   columns?: 1 | 2 | 3 | 4
   className?: string
@@ -19,7 +18,6 @@ export interface BannerProps {
 export function Banner({
   title,
   banners = [],
-  backgroundColor,
   align = "default",
   columns,
   className,
@@ -48,7 +46,6 @@ export function Banner({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="container mx-auto">
         {title && (

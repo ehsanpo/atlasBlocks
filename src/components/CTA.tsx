@@ -8,40 +8,11 @@ export interface CTALink {
 }
 
 export interface CTAProps {
-  /**
-   * Main headline
-   */
   headline?: string
-  
-  /**
-   * Sub-headline/description (supports HTML)
-   */
   subheadline?: string
-  
-  /**
-   * Action buttons/links
-   */
   links?: CTALink[]
-  
-  /**
-   * Section background image URL
-   */
   backgroundImage?: string
-  
-  /**
-   * Section background color
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the component
-   * @default "default"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
 }
 
@@ -50,7 +21,6 @@ export function CTA({
   subheadline,
   links = [],
   backgroundImage,
-  backgroundColor,
   align = "default",
   className,
 }: CTAProps) {
@@ -64,7 +34,6 @@ export function CTA({
         className
       )}
       style={{ 
-        backgroundColor,
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center'

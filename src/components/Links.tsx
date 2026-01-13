@@ -13,7 +13,6 @@ export interface LinkItem {
 
 export interface LinksProps {
   links: LinkItem[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   columns?: 1 | 2 | 3 | 4
   textAlign?: "left" | "center" | "right"
@@ -23,7 +22,6 @@ export interface LinksProps {
 
 export function Links({
   links = [],
-  backgroundColor,
   align = "default",
   columns,
   textAlign = "center",
@@ -55,7 +53,6 @@ export function Links({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="container mx-auto">
         <div className={cn("grid gap-12 md:gap-8 lg:gap-10", gridClass)}>

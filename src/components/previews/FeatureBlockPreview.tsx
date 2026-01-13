@@ -48,7 +48,6 @@ export interface FeatureBlockProps {
   image: string
   appTitle?: string
   imageOnLeft?: boolean
-  backgroundColor?: string
   className?: string
 }
 
@@ -59,13 +58,11 @@ export function FeatureBlock({
   image,
   appTitle = "preview-v1",
   imageOnLeft = false,
-  backgroundColor,
   className,
 }: FeatureBlockProps) {
   return (
     <section 
       className={cn("py-20 overflow-hidden", className)}
-      style={{ backgroundColor }}
     >
       <div className="container mx-auto px-4">
         <div className={cn(

@@ -18,7 +18,6 @@ export interface TeamProps {
   members: TeamMember[]
   columns?: 2 | 3 | 4
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -28,7 +27,6 @@ export function Team({
   members = [],
   columns = 3,
   align = "default",
-  backgroundColor,
   className,
 }: TeamProps) {
   return (
@@ -40,7 +38,6 @@ export function Team({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="mx-auto max-w-2xl text-center mb-16">
         <h2 className="text-3xl font-bold tracking-tight md:text-5xl mb-4">{headline}</h2>

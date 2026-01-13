@@ -21,7 +21,6 @@ export interface CTAProps {
   subheadline?: string
   links?: CTALink[]
   backgroundImage?: string
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
 }
@@ -31,7 +30,6 @@ export function CTA({
   subheadline,
   links = [],
   backgroundImage,
-  backgroundColor,
   align = "default",
   className,
 }: CTAProps) {
@@ -45,12 +43,12 @@ export function CTA({
         className
       )}
       style={{ 
-        backgroundColor,
         backgroundImage: backgroundImage ? \`url(\${backgroundImage})\` : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
+      {/* Background Overlay (only if image exists) */}
       {backgroundImage && (
         <div className="absolute inset-0 bg-black/50 z-0" />
       )}
@@ -108,8 +106,8 @@ const apiProps = [
   { name: "subheadline", type: "string (HTML)", description: "Secondary text or description below the headline." },
   { name: "links", type: "CTALink[]", description: "Array of button labels and target URLs." },
   { name: "backgroundImage", type: "string", description: "URL for a background image." },
-  { name: "backgroundColor", type: "string", description: "Background color if no image is used." },
   { name: "align", type: "'default' | 'wide' | 'full'", defaultValue: "'default'", description: "Width and alignment of the container." },
+  { name: "className", type: "string", description: "Additional CSS classes." },
 ]
 
 export function CTAPreview() {

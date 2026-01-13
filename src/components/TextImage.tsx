@@ -8,52 +8,13 @@ export interface TextImageLink {
 }
 
 export interface TextImageProps {
-  /**
-   * Main headline
-   */
   headline?: string
-  
-  /**
-   * Body text (supports HTML)
-   */
   bodyText?: string
-  
-  /**
-   * Image URL
-   */
   image?: string
-  
-  /**
-   * Position the image on the left side
-   * @default false
-   */
   imageOnLeft?: boolean
-  
-  /**
-   * Add extra padding to the section
-   * @default true
-   */
   addPadding?: boolean
-  
-  /**
-   * Action links
-   */
   links?: TextImageLink[]
-  
-  /**
-   * Section background color
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the component
-   * @default "default"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
 }
 
@@ -64,7 +25,6 @@ export function TextImage({
   imageOnLeft = false,
   addPadding = true,
   links = [],
-  backgroundColor,
   align = "default",
   className,
 }: TextImageProps) {
@@ -78,7 +38,6 @@ export function TextImage({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className={cn("container mx-auto", !addPadding && "p-0 max-w-none")}>
         <div className={cn(

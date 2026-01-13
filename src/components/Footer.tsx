@@ -16,7 +16,6 @@ export interface FooterProps {
   sections: FooterSection[]
   copyright?: string
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   gradientBackground?: boolean
   className?: string
 }
@@ -32,7 +31,6 @@ export function Footer({
   sections = [],
   copyright = `© ${new Date().getFullYear()} Atlas Blocks Inc. All rights reserved.`,
   align = "default",
-  backgroundColor,
   gradientBackground = false,
   className,
 }: FooterProps) {
@@ -46,7 +44,6 @@ export function Footer({
         align === "default" && "max-w-6xl mx-auto px-8",
         className
       )}
-      style={{ backgroundColor }}
     >
       {/* Abstract background shapes if gradient is on */}
       {gradientBackground && (

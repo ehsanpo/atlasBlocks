@@ -15,7 +15,6 @@ export interface ContactFormProps {
   successMessage?: string
   submitText?: string
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -25,7 +24,6 @@ export function ContactForm({
   successMessage = "Thank you! Your message has been sent successfully.",
   submitText = "Send Message",
   align = "default",
-  backgroundColor,
   className,
 }: ContactFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false)

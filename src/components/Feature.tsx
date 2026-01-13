@@ -16,7 +16,6 @@ export interface FeatureProps {
   textAlign?: "center" | "left"
   iconPosition?: "top" | "side"
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -28,7 +27,6 @@ export function Feature({
   textAlign = "center",
   iconPosition = "top",
   align = "default",
-  backgroundColor,
   className,
 }: FeatureProps) {
   return (
@@ -40,7 +38,6 @@ export function Feature({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className={cn(
         "mx-auto max-w-2xl mb-16",
@@ -59,7 +56,7 @@ export function Feature({
         )}
       >
         {features.map((feature) => {
-          const Icon = (Icons[feature.iconName] as any) || Icons.CheckCircle
+          const Icon = (Icons[feature.iconName] as React.ComponentType<React.SVGProps<SVGSVGElement>>) || Icons.CheckCircle
           return (
             <div 
               key={feature.id} 

@@ -16,7 +16,6 @@ export interface GalleryProps {
   columns?: 2 | 3 | 4
   gap?: "sm" | "md" | "lg"
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -26,7 +25,6 @@ export function Gallery({
   columns = 3,
   gap = "md",
   align = "default",
-  backgroundColor,
   className,
 }: GalleryProps) {
   const [selectedImageIdx, setSelectedImageIdx] = useState<number | null>(null)
@@ -62,7 +60,6 @@ export function Gallery({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className={cn(
         layout === "grid" ? "grid" : "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4",

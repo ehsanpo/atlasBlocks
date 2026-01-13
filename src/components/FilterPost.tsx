@@ -22,7 +22,6 @@ export interface FilterPostProps {
   projects: PostProject[]
   categories: Category[]
   showFilters?: boolean
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   columns?: 2 | 3 | 4
   className?: string
@@ -32,7 +31,6 @@ export function FilterPost({
   projects = [],
   categories = [],
   showFilters = true,
-  backgroundColor,
   align = "default",
   columns = 3,
   className,
@@ -53,7 +51,6 @@ export function FilterPost({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="container mx-auto">
         {/* WP Style horizontal filter bar */}

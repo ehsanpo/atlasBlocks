@@ -23,7 +23,6 @@ export interface TextImageProps {
   imageOnLeft?: boolean
   addPadding?: boolean
   links?: TextImageLink[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
 }
@@ -35,7 +34,6 @@ export function TextImage({
   imageOnLeft = false,
   addPadding = true,
   links = [],
-  backgroundColor,
   align = "default",
   className,
 }: TextImageProps) {
@@ -47,7 +45,7 @@ export function TextImage({
       align === "full" && "w-full",
       align === "default" && "max-w-6xl mx-auto px-4",
       className
-    )} style={{ backgroundColor }}>
+    )}>
       <div className={cn("container mx-auto", !addPadding && "p-0 max-w-none")}>
         <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:items-center gap-8 md:gap-12 lg:gap-16", !addPadding && "gap-0")}>
           <div className={cn("relative min-h-[350px] md:min-h-[450px] lg:min-h-[600px] overflow-hidden group", imageOnLeft ? "md:order-1" : "md:order-2", addPadding && "rounded-3xl shadow-2xl")}>

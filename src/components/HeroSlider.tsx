@@ -11,38 +11,15 @@ export interface SlideItem {
 }
 
 export interface HeroSliderProps {
-  /**
-   * List of slides to display
-   */
   slides: SlideItem[]
-  
-  /**
-   * Auto-play interval in ms (0 to disable)
-   * @default 5000
-   */
   autoPlayInterval?: number
-  
-  /**
-   * Section background color
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the component
-   * @default "full"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
 }
 
 export function HeroSlider({
   slides = [],
   autoPlayInterval = 5000,
-  backgroundColor,
   align = "full",
   className,
 }: HeroSliderProps) {
@@ -91,7 +68,6 @@ export function HeroSlider({
         align === "default" && "max-w-6xl mx-auto rounded-3xl",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="relative h-[400px] md:h-[500px] lg:h-[700px] w-full overflow-hidden">
         {/* Slides */}

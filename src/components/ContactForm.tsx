@@ -11,7 +11,6 @@ export interface ContactFormProps {
   successMessage?: string
   submitText?: string
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -21,7 +20,6 @@ export function ContactForm({
   successMessage = "Thank you! Your message has been sent successfully.",
   submitText = "Send Message",
   align = "default",
-  backgroundColor,
   className,
 }: ContactFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -46,7 +44,6 @@ export function ContactForm({
         align === "default" && "max-w-4xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="mx-auto max-w-2xl text-center mb-12">
         <h2 className="text-3xl font-bold tracking-tight md:text-5xl mb-4">{title}</h2>

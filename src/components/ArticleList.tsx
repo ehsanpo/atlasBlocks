@@ -12,50 +12,17 @@ export interface Article {
 }
 
 export interface ArticleListProps {
-  /**
-   * Articles to display
-   */
   articles: Article[]
-  
-  /**
-   * Number of articles to show (2, 3, 4, or -1 for all)
-   * @default 3
-   */
   newsToShow?: 2 | 3 | 4 | -1
-  
-  /**
-   * Background color for the section
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the block (wide, full, or default)
-   * @default "default"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
-  
-  /**
-   * Text for the "Read more" link
-   * @default "Read more"
-   */
   readMoreText?: string
-  
-  /**
-   * Maximum length of excerpt in words
-   * @default 30
-   */
   excerptLength?: number
 }
 
 export function ArticleList({
   articles = [],
   newsToShow = 3,
-  backgroundColor,
   align = "default",
   className,
   readMoreText = "Read more",
@@ -80,7 +47,6 @@ export function ArticleList({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <ul
         className={cn(

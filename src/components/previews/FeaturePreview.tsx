@@ -27,7 +27,6 @@ export interface FeatureProps {
   features: FeatureItem[]
   columns?: 2 | 3 | 4
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -37,7 +36,6 @@ export function Feature({
   features = [],
   columns = 3,
   align = "default",
-  backgroundColor,
   className,
 }: FeatureProps) {
   // Implementation...

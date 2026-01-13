@@ -12,14 +12,7 @@ export interface ParallaxSlideItem {
 }
 
 export interface ParallaxCarouselProps {
-  /**
-   * List of slides to display
-   */
   items: ParallaxSlideItem[]
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
 }
 

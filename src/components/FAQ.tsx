@@ -9,37 +9,14 @@ export interface FAQItem {
 }
 
 export interface FAQProps {
-  /**
-   * FAQ questions and answers
-   */
   questions: FAQItem[]
-  
-  /**
-   * Section background color
-   */
-  backgroundColor?: string
-  
-  /**
-   * Alignment of the component
-   * @default "default"
-   */
   align?: "default" | "wide" | "full"
-  
-  /**
-   * Additional CSS classes
-   */
   className?: string
-  
-  /**
-   * Allow multiple items to be open at once
-   * @default false
-   */
   allowMultiple?: boolean
 }
 
 export function FAQ({
   questions = [],
-  backgroundColor,
   align = "default",
   className,
   allowMultiple = false,
@@ -68,7 +45,6 @@ export function FAQ({
         align === "default" && "max-w-4xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       <div className="divide-y divide-border rounded-xl border border-border bg-card shadow-sm overflow-hidden">
         {questions.map((item) => {

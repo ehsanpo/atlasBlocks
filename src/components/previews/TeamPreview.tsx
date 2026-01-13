@@ -53,7 +53,6 @@ export interface TeamProps {
   members: TeamMember[]
   columns?: 2 | 3 | 4
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -63,7 +62,6 @@ export function Team({
   members = [],
   columns = 3,
   align = "default",
-  backgroundColor,
   className,
 }: TeamProps) {
   // Implementation...

@@ -41,7 +41,6 @@ export interface TestimonialsProps {
   headline?: string
   description?: string
   testimonials: TestimonialItem[]
-  backgroundColor?: string
   align?: "default" | "wide" | "full"
   className?: string
 }
@@ -50,7 +49,6 @@ export function Testimonials({
   headline,
   description,
   testimonials = [],
-  backgroundColor,
   align = "default",
   className,
 }: TestimonialsProps) {
@@ -61,7 +59,7 @@ export function Testimonials({
       align === "full" && "w-full",
       align === "default" && "max-w-6xl mx-auto px-4",
       className
-    )} style={{ backgroundColor }}>
+    )}>
       <div className="container mx-auto text-center">
         {(headline || description) && (
           <div className="mx-auto mb-16 max-w-2xl text-center">

@@ -13,7 +13,6 @@ export interface StatisticProps {
   stats: StatItem[]
   columns?: 2 | 3 | 4
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -22,7 +21,6 @@ export function Statistic({
   stats = [],
   columns = 4,
   align = "default",
-  backgroundColor,
   className,
 }: StatisticProps) {
   return (
@@ -34,7 +32,6 @@ export function Statistic({
         align === "default" && "max-w-6xl mx-auto px-4",
         className
       )}
-      style={{ backgroundColor }}
     >
       {headline && (
         <div className="mx-auto max-w-2xl text-center mb-16">

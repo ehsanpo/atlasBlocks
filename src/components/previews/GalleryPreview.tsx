@@ -29,7 +29,6 @@ export interface GalleryProps {
   columns?: 2 | 3 | 4
   gap?: "sm" | "md" | "lg"
   align?: "default" | "wide" | "full"
-  backgroundColor?: string
   className?: string
 }
 
@@ -39,7 +38,6 @@ export function Gallery({
   columns = 3,
   gap = "md",
   align = "default",
-  backgroundColor,
   className,
 }: GalleryProps) {
   // Implementation with Lightbox...
