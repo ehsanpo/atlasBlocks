@@ -39,7 +39,6 @@ export function Sidebar({
       isCollapsed ? "w-16" : "w-64"
     )}>
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {/* Toggle Button */}
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="absolute -right-3 top-20 bg-primary text-primary-foreground rounded-full p-1 shadow-lg hover:scale-110 active:scale-95 transition-all z-[70]"
@@ -47,7 +46,6 @@ export function Sidebar({
           {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
         </button>
 
-        {/* Header */}
         <div className={cn("border-b border-border p-6 transition-all", isCollapsed && "px-4")}>
           <button 
             onClick={() => onSelectComponent('home-page')}
@@ -93,7 +91,6 @@ export function Sidebar({
           </div>
         </div>
 
-        {/* Navigation */}
         <nav className="flex-1 overflow-y-auto p-4 custom-scrollbar">
           <ul className="space-y-1">
             {components.map((component) => (
@@ -122,7 +119,6 @@ export function Sidebar({
           </ul>
         </nav>
 
-        {/* Footer */}
         <div className={cn("border-t border-border p-4 transition-all", isCollapsed && "p-2")}>
           {!isCollapsed ? (
             <p className="text-[10px] text-muted-foreground/60 text-center uppercase tracking-tight">

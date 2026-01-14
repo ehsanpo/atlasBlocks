@@ -8,21 +8,21 @@ const initialTestimonials = [
     name: "Sarah Johnson",
     role: "CEO at TechFlow",
     image: "https://i.pravatar.cc/150?u=sarah",
-    testimonial: "Implementing these components saved us weeks of development time. The quality and flexibility are unmatched."
+    testimonial: "The carousel component handles touch events way better than the one from MUI. Saved me 3 days fighting with gesture handlers."
   },
   {
     id: 2,
     name: "Michael Chen",
     role: "Senior Frontend Engineer",
     image: "https://i.pravatar.cc/150?u=michael",
-    testimonial: "The clean code and excellent documentation made integration a breeze. It's now our go-to for all new projects."
+    testimonial: "Typography spacing is actually consistent, unlike every other library I've tried. My designer finally stopped complaining about the 2px gaps."
   },
   {
     id: 3,
     name: "Elena Rodriguez",
     role: "Product Designer",
     image: "https://i.pravatar.cc/150?u=elena",
-    testimonial: "Finally, a component library that truly values design. Every element feels premium and polished."
+    testimonial: "Dropped our bundle size by 40kb switching from Material. The testimonial cards look way cleaner than what we had before."
   }
 ]
 
@@ -117,8 +117,8 @@ const apiProps = [
 
 export function TestimonialsPreview() {
   const [data, setData] = useState({
-    headline: "Trusted by Modern Teams",
-    description: "Join thousands of satisfied users who have transformed their workflow with our premium component library.",
+    headline: "What people say",
+    description: "Real feedback from developers using Atlas Blocks in production.",
     testimonials: initialTestimonials,
     align: "default" as const
   })

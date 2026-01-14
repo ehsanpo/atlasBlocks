@@ -53,12 +53,10 @@ export function Header({
       )}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 md:px-8">
-        {/* Logo */}
         <a href="/" className="flex items-center gap-2 transition-transform hover:scale-105">
           {logo}
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((link, idx) => (
             <div key={idx} className="relative group">
@@ -89,7 +87,6 @@ export function Header({
           ))}
         </nav>
 
-        {/* CTA Section */}
         <div className="hidden lg:flex items-center gap-4">
           <Button variant="ghost" size="sm">Log In</Button>
           <Button size="sm" asChild>
@@ -97,7 +94,6 @@ export function Header({
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="lg:hidden p-2 text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -106,7 +102,6 @@ export function Header({
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-[64px] z-50 bg-background/95 backdrop-blur-xl animate-in fade-in slide-in-from-right duration-300">
           <nav className="flex flex-col p-6 space-y-6">

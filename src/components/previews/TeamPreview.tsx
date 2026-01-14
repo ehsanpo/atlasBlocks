@@ -8,7 +8,7 @@ const sampleMembers = [
     name: "Dr. Alexander Forge", 
     role: "Chief Architect", 
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop", 
-    bio: "Passionate about building scalable distributed systems and modern UI architecture.",
+    bio: "Built the initial component library in 3 weeks. Previously worked on design systems at Stripe and Figma.",
     twitterUrl: "#",
     linkedinUrl: "#",
     githubUrl: "#"
@@ -18,7 +18,7 @@ const sampleMembers = [
     name: "Sarah Jenkins", 
     role: "Product Design Lead", 
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop", 
-    bio: "Focused on creating intuitive user experiences that bridge the gap between human and machine.",
+    bio: "Spent 2 years refining the typography scale. Has strong opinions about 8px vs 4px grid systems.",
     twitterUrl: "#",
     linkedinUrl: "#"
   },
@@ -27,7 +27,7 @@ const sampleMembers = [
     name: "Marcus Aurelius", 
     role: "Senior Frontend Engineer", 
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop", 
-    bio: "Master of CSS and modern React patterns, dedicated to pixel-perfect implementation.",
+    bio: "Rewrote the carousel component 4 times until the gesture handling felt right. Still not satisfied.",
     twitterUrl: "#",
     githubUrl: "#"
   },
@@ -64,7 +64,39 @@ export function Team({
   align = "default",
   className,
 }: TeamProps) {
-  // Implementation...
+  return (
+    <section className={cn(
+      "py-12 md:py-16 lg:py-20",
+      align === "wide" && "max-w-7xl mx-auto px-4",
+      align === "full" && "w-full",
+      align === "default" && "max-w-6xl mx-auto px-4",
+      className
+    )}>
+      <div className="container mx-auto">
+        {(headline || subheadline) && (
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            {headline && <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">{headline}</h2>}
+            {subheadline && <p className="text-lg text-muted-foreground">{subheadline}</p>}
+          </div>
+        )}
+        <div className={cn(
+          "grid gap-8 md:gap-10",
+          columns === 2 && "grid-cols-1 md:grid-cols-2",
+          columns === 3 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+          columns === 4 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+        )}>
+          {members.map((member) => (
+            <div key={member.id} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-xl">
+              <img src={member.image} alt={member.name} className="mb-4 h-48 w-full object-cover rounded-lg" />
+              <h3 className="font-bold text-lg">{member.name}</h3>
+              <p className="text-sm text-primary mb-2">{member.role}</p>
+              {member.bio && <p className="text-sm text-muted-foreground">{member.bio}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }`
 
 const usageCode = `import { Team } from "@/components/Team"

@@ -45,7 +45,21 @@ export function ContactForm({
         <p className="text-lg text-muted-foreground">{description}</p>
       </div>
       <div className="mx-auto max-w-xl rounded-3xl border border-border bg-card p-8 md:p-12 shadow-2xl relative overflow-hidden">
-        {/* Form Implementation... */}
+        {!isSubmitted ? (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <Input placeholder="Your name" required />
+            <Input type="email" placeholder="Your email" required />
+            <Textarea placeholder="Your message" rows={5} required />
+            <Button type="submit" disabled={isLoading} className="w-full">
+              {isLoading ? "Sending..." : submitText}
+            </Button>
+          </form>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <CheckCircle2 className="mb-4 h-12 w-12 text-green-500" />
+            <p className="text-lg font-semibold">{successMessage}</p>
+          </div>
+        )}
       </div>
     </section>
   )

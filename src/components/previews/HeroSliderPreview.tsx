@@ -107,7 +107,6 @@ export function HeroSlider({
             </a>
           </div>
         ))}
-        {/* Navigation omitted for brevity in code preview */}
       </div>
     </section>
   )

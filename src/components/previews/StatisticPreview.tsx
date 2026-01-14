@@ -3,10 +3,10 @@ import { Statistic } from '../Statistic'
 import { DocPage } from '../DocPage'
 
 const sampleStats = [
-  { id: 1, label: "Happy Clients", value: "2.5", suffix: "k+", description: "Satisfied customers across the globe." },
-  { id: 2, label: "Projects Done", value: "450", suffix: "+", description: "Successfully delivered digital experiences." },
-  { id: 3, label: "Years Experience", value: "12", suffix: "", description: "A decade of mastering modern technologies." },
-  { id: 4, label: "Support Hours", value: "24/7", suffix: "", description: "Dedicated assistance whenever you need it." },
+  { id: 1, label: "Downloads", value: "2.5", suffix: "k+", description: "npm installs this month" },
+  { id: 2, label: "Components", value: "28", suffix: "", description: "Production-ready blocks" },
+  { id: 3, label: "Bundle Size", value: "12", suffix: "kb", description: "Tree-shakeable components" },
+  { id: 4, label: "GitHub Stars", value: "847", suffix: "", description: "And growing daily" },
 ]
 
 const componentCode = `import { cn } from "@/lib/utils"
@@ -34,7 +34,39 @@ export function Statistic({
   align = "default",
   className,
 }: StatisticProps) {
-  // Implementation...
+  return (
+    <section className={cn(
+      "py-12 md:py-16 lg:py-20",
+      align === "wide" && "max-w-7xl mx-auto px-4",
+      align === "full" && "w-full",
+      align === "default" && "max-w-6xl mx-auto px-4",
+      className
+    )}>
+      <div className="container mx-auto">
+        {headline && (
+          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-5xl">{headline}</h2>
+        )}
+        <div className={cn(
+          "grid gap-8",
+          columns === 2 && "grid-cols-1 md:grid-cols-2",
+          columns === 3 && "grid-cols-1 md:grid-cols-3",
+          columns === 4 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+        )}>
+          {stats.map((stat) => (
+            <div key={stat.id} className="text-center">
+              <div className="mb-2 text-5xl font-bold text-primary md:text-6xl">
+                {stat.value}{stat.suffix}
+              </div>
+              <div className="mb-2 text-lg font-semibold">{stat.label}</div>
+              {stat.description && (
+                <p className="text-sm text-muted-foreground">{stat.description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }`
 
 const usageCode = `import { Statistic } from "@/components/Statistic"

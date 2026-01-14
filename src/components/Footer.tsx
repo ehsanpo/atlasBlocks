@@ -45,7 +45,6 @@ export function Footer({
         className
       )}
     >
-      {/* Abstract background shapes if gradient is on */}
       {gradientBackground && (
         <>
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
@@ -54,7 +53,6 @@ export function Footer({
       )}
 
       <div className="relative z-10 grid grid-cols-1 gap-12 lg:grid-cols-12">
-        {/* Brand Section */}
         <div className="lg:col-span-4">
           <div className="mb-8">{logo}</div>
           <p className="font-mono max-w-xs text-muted-foreground leading-relaxed mb-8 text-lg">
@@ -62,7 +60,6 @@ export function Footer({
           </p>
         </div>
 
-        {/* Links Sections */}
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-8">
           {sections.map((section, idx) => (
             <div key={idx}>

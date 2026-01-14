@@ -62,7 +62,6 @@ export function DocPage<T>({
         <p className="text-xl text-muted-foreground">{description}</p>
       </div>
 
-      {/* Preview Section - Always on Top */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Preview</h2>
@@ -81,7 +80,6 @@ export function DocPage<T>({
         </div>
       </section>
 
-      {/* Details Section - Tabs below Preview */}
       <Tabs defaultValue="code" className="w-full">
         <TabsList className="w-full justify-start h-auto p-0 bg-transparent border-b border-border rounded-none gap-6 mb-6 overflow-x-auto scrollbar-none">
           <TabsTrigger value="code" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent shadow-none pb-4 text-sm font-medium">Implementation</TabsTrigger>

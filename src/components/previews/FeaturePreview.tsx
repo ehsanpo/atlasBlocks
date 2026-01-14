@@ -3,12 +3,12 @@ import { Feature } from '../Feature'
 import { DocPage } from '../DocPage'
 
 const sampleFeatures = [
-  { id: 1, title: "Lightning Fast", description: "Experience blazing fast load times with our optimized global delivery network.", iconName: "Zap" as const },
-  { id: 2, title: "Secure by Design", description: "Built-in enterprise-grade security to keep your data safe and compliant.", iconName: "Shield" as const },
-  { id: 3, title: "Global Scale", description: "Deploy your infrastructure across 30+ regions worldwide with just one click.", iconName: "Globe" as const },
-  { id: 4, title: "Smart Analytics", description: "Get deep insights into your users' behavior with our real-time tracking.", iconName: "BarChart3" as const },
-  { id: 5, title: "Infinite Growth", description: "Scale your business without limits using our flexible tiered pricing models.", iconName: "TrendingUp" as const },
-  { id: 6, title: "24/7 Support", description: "Our expert team is always available to help you resolve any technical issues.", iconName: "LifeBuoy" as const },
+  { id: 1, title: "Lightning Fast", description: "Components lazy-load and tree-shake. Initial bundle under 15kb gzipped.", iconName: "Zap" as const },
+  { id: 2, title: "TypeScript First", description: "Full type coverage with exported interfaces. Auto-complete everything.", iconName: "Shield" as const },
+  { id: 3, title: "Copy & Paste", description: "No NPM dependencies. Just copy the code directly into your project.", iconName: "Globe" as const },
+  { id: 4, title: "Tailwind CSS", description: "Built with Tailwind v3. Customize colors, spacing, and everything else.", iconName: "BarChart3" as const },
+  { id: 5, title: "Dark Mode", description: "Uses CSS variables for theming. Switch modes without any flash.", iconName: "TrendingUp" as const },
+  { id: 6, title: "Accessible", description: "ARIA labels, keyboard navigation, and screen reader tested.", iconName: "LifeBuoy" as const },
 ]
 
 const componentCode = `import { cn } from "@/lib/utils"

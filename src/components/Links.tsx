@@ -68,7 +68,6 @@ export function Links({
                 cardStyle === "elevated" && "p-8 rounded-2xl border border-border bg-card hover:shadow-2xl hover:border-primary/20 hover:-translate-y-1"
               )}
             >
-              {/* Icon/Image */}
               {item.icon && (
                 <a 
                   href={item.linkUrl} 
@@ -90,7 +89,6 @@ export function Links({
                 </a>
               )}
               
-              {/* Content */}
               <div className={cn(
                 "flex flex-col transition-all duration-300",
                 cardStyle !== "none" ? "px-0" : "px-4"

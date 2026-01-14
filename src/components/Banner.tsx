@@ -61,16 +61,13 @@ export function Banner({
               href={item.link}
               className="group relative block min-h-[300px] overflow-hidden rounded-xl border border-border shadow-sm transition-all duration-500"
             >
-              {/* Background Image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{ backgroundImage: `url(${item.image})` }}
               />
               
-              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90 mt-auto" />
               
-              {/* Content Wrapper */}
               <div className="relative z-10 flex h-full items-end justify-start p-8">
                 <h3 className="text-xl font-bold text-white drop-shadow-md transition-all duration-300 group-hover:translate-x-2 md:text-2xl text-left">
                   {item.text}

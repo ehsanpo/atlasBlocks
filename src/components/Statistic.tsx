@@ -63,7 +63,6 @@ export function Statistic({
                 </p>
               )}
             </div>
-            {/* Subtle highlight effect */}
             <div className="absolute inset-0 bg-primary/5 opacity-0 hover:opacity-100 transition-opacity rounded-2xl -z-10" />
           </div>
         ))}

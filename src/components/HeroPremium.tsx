@@ -30,7 +30,6 @@ export function HeroPremium({
     <section 
       className={cn("w-full relative min-h-[90vh] flex flex-col items-center justify-center pt-24 px-6 overflow-hidden bg-background", className)}
     >
-        {/* Background Elements */}
         <div 
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
@@ -44,7 +43,6 @@ export function HeroPremium({
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full opacity-20 pointer-events-none mix-blend-screen animate-pulse duration-[5000ms]"></div>
         
         <div className="relative z-10 text-center max-w-5xl mx-auto space-y-10">
-            {/* Status Badge */}
             <div className="inline-flex items-center gap-3 border border-white/5 rounded-full pl-2 pr-4 py-1 bg-black/40 backdrop-blur-md hover:border-white/10 transition-colors">
                 <span className="flex h-2 w-2 relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
@@ -53,12 +51,10 @@ export function HeroPremium({
                 <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">{tag}</span>
             </div>
 
-            {/* Main Title */}
             <h1 className="font-black text-6xl md:text-9xl tracking-tighter uppercase leading-[0.85] select-none text-white drop-shadow-2xl">
                 {titleLine1} <br/><span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">{titleLine2}</span>
             </h1>
             
-            {/* Actions */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8">
                 {onPrimaryClick ? (
                     <button 

@@ -45,7 +45,35 @@ export function Header({
   sticky = true,
   transparent = false,
 }: HeaderProps) {
-  // Implementation...
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  return (
+    <header className={cn(
+      "w-full border-b",
+      sticky && "sticky top-0 z-50",
+      transparent && !scrolled && "bg-transparent",
+      "bg-background"
+    )}>
+      <nav className="container mx-auto flex items-center justify-between px-4 py-4">
+        <div className="flex items-center gap-8">
+          {logo}
+          <ul className="hidden md:flex gap-6">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a href={link.url} className="text-sm font-medium hover:text-primary">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Button asChild>
+          <a href={ctaUrl}>{ctaText}</a>
+        </Button>
+      </nav>
+    </header>
+  )
 }`
 
 const usageCode = `import { Header } from "@/components/Header"

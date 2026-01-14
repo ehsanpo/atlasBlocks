@@ -62,7 +62,43 @@ export function Footer({
   align = "default",
   className,
 }: FooterProps) {
-  // Implementation...
+  return (
+    <footer className={cn(
+      "border-t bg-muted/50 py-12",
+      align === "wide" && "max-w-7xl mx-auto px-4",
+      align === "full" && "w-full",
+      align === "default" && "max-w-6xl mx-auto px-4",
+      className
+    )}>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div>
+            {logo}
+            {description && <p className="mt-4 text-sm text-muted-foreground">{description}</p>}
+          </div>
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h3 className="mb-4 font-semibold">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.url} className="text-sm text-muted-foreground hover:text-foreground">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        {copyright && (
+          <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+            {copyright}
+          </div>
+        )}
+      </div>
+    </footer>
+  )
 }`
 
 const usageCode = `import { Footer } from "@/components/Footer"

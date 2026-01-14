@@ -53,7 +53,6 @@ export function FilterPost({
       )}
     >
       <div className="container mx-auto">
-        {/* WP Style horizontal filter bar */}
         {showFilters && (
           <div className="mb-12 flex flex-wrap justify-center gap-2 md:gap-4">
             <button
@@ -84,7 +83,6 @@ export function FilterPost({
           </div>
         )}
 
-        {/* Post Grid */}
         <div className={cn(
           "grid gap-8",
           columns === 2 && "md:grid-cols-2",

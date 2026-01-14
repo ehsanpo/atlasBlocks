@@ -70,7 +70,6 @@ export function HeroSlider({
       )}
     >
       <div className="relative h-[400px] md:h-[500px] lg:h-[700px] w-full overflow-hidden">
-        {/* Slides */}
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -87,16 +86,13 @@ export function HeroSlider({
               href={slide.link} 
               className="relative block h-full w-full group"
             >
-              {/* Image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] group-hover:scale-105"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               
-              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
               
-              {/* Content */}
               {slide.headline && (
                 <div className="relative z-20 flex h-full items-center justify-center p-12 text-center">
                   <div className="max-w-4xl px-4">
@@ -114,7 +110,6 @@ export function HeroSlider({
           </div>
         ))}
 
-        {/* Navigation Arrows */}
         {slides.length > 1 && (
           <>
             <Button
@@ -138,7 +133,6 @@ export function HeroSlider({
           </>
         )}
 
-        {/* Indicators/Dots */}
         {slides.length > 1 && (
           <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3">
             {slides.map((_, index) => (

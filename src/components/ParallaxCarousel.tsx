@@ -92,9 +92,7 @@ export function ParallaxCarousel({
                 className="shrink-0 w-[300px] md:w-[330px] p-[15px] pointer-events-auto"
               >
                 <div className="bg-white overflow-hidden rounded-xl shadow-2xl transition-all duration-400 group">
-                  {/* Card Body */}
                   <div className="relative h-[250px] w-full overflow-hidden">
-                    {/* Parallax Background */}
                     <div 
                       className="absolute top-0 left-[-50%] h-full w-[200%] bg-cover bg-center"
                       style={{ 
@@ -103,7 +101,6 @@ export function ParallaxCarousel({
                       }}
                     />
                     
-                    {/* Logo/Center Link */}
                     <a 
                       href={item.link}
                       onClick={(e) => isDragging && e.preventDefault()}
@@ -117,7 +114,6 @@ export function ParallaxCarousel({
                     </a>
                   </div>
 
-                  {/* Card Footer */}
                   <div className="p-6 pb-8 bg-white relative">
                     <div className="pr-12">
                       <h3 className="text-[#690911] font-bold text-sm leading-tight line-clamp-1">
@@ -128,7 +124,6 @@ export function ParallaxCarousel({
                       </p>
                     </div>
                     
-                    {/* Action Button */}
                     <a 
                       href={item.link}
                       onClick={(e) => isDragging && e.preventDefault()}

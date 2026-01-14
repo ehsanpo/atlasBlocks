@@ -40,7 +40,39 @@ export function Gallery({
   align = "default",
   className,
 }: GalleryProps) {
-  // Implementation with Lightbox...
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  return (
+    <section className={cn(
+      "py-12 md:py-16 lg:py-20",
+      align === "wide" && "max-w-7xl mx-auto px-4",
+      align === "full" && "w-full",
+      align === "default" && "max-w-6xl mx-auto px-4",
+      className
+    )}>
+      <div className={cn(
+        "grid",
+        gap === "sm" && "gap-2",
+        gap === "md" && "gap-4",
+        gap === "lg" && "gap-6",
+        columns === 2 && "grid-cols-1 md:grid-cols-2",
+        columns === 3 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+        columns === 4 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+      )}>
+        {images.map((image, idx) => (
+          <div key={image.id} className="group relative overflow-hidden rounded-lg cursor-pointer" onClick={() => { setSelectedIndex(idx); setLightboxOpen(true) }}>
+            <img src={image.url} alt={image.alt} className="h-full w-full object-cover transition-transform group-hover:scale-105" />
+            {image.title && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <p className="text-sm font-medium text-white">{image.title}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
 }`
 
 const usageCode = `import { Gallery } from "@/components/Gallery"

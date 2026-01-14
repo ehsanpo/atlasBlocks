@@ -80,7 +80,25 @@ export function Banner({
         )}
         
         <div className={cn("grid gap-6 md:gap-8", gridClass)}>
-          {/* Banner mapping... */}
+          {banners.map((banner) => (
+            <a
+              key={banner.id}
+              href={banner.link}
+              className="group relative overflow-hidden rounded-2xl border border-border shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1"
+            >
+              <div className="relative h-64 w-full overflow-hidden">
+                <img
+                  src={banner.image}
+                  alt={banner.text}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-xl font-bold text-white drop-shadow-lg">{banner.text}</p>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
